@@ -13,6 +13,6 @@ module.exports = {
   },
   output: {
     path: PATHS.build,
-    filename: 'budnle.js'
+    filename: 'bundle.js'
   }
 };
