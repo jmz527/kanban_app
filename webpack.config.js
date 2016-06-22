@@ -35,6 +35,7 @@ const common = {
 // Default configuration
 if(TARGET === 'start' || !TARGET) {
   module.exports = merge(common, {
+    devtool: 'deval-source-map',
     devServer: {
       contentBase: PATHS.build,
 
