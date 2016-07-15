@@ -42,10 +42,12 @@ export default class Lane extends React.Component {
 
     NoteActions.update({id, task, editing: false});
   }
-  addNote(e) {
+  addNote = (e) => {
     // If note is added, avoid opening lane name edit by stopping
     // event bubbling in this case.
     e.stopPropagation();
+
+    // debugger;
 
     const laneId = this.props.lane.id;
     const note = NoteActions.create({task: 'New task'});

@@ -35,13 +35,12 @@ class LaneStore {
     });
   }
 
-
   attachToLane({laneId, noteId}) {
-    // if(!noteId) {
-    //   this.waitFor(NoteStore);
+    if(!noteId) {
+      this.waitFor(NoteStore);
 
-    //   noteId = NoteStore.getState().notes.slice(-1)[0].id;
-    // }
+      noteId = NoteStore.getState().notes.slice(-1)[0].id;
+    }
 
     const lanes = this.lanes.map(lane => {
       if(lane.id === laneId) {
@@ -68,6 +67,9 @@ class LaneStore {
     });
 
     this.setState({lanes});
+  }
+  move({sourceId, targetId}) {
+    console.log(`source: ${sourceId}, target: ${targetId}`);
   }
 }
 
